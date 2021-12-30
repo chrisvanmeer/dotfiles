@@ -16,7 +16,7 @@ ZSH_THEME="tjkirch_mod"
 unsetopt nomatch
 
 # Enable plugins.
-plugins=(git brew ansible command-not-found history kubectl sudo web-search copydir copyfile history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git brew ansible command-not-found history kubectl sudo web-search copydir copyfile history-substring-search zsh-autosuggestions)
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
