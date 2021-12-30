@@ -12,16 +12,16 @@ export CLICOLOR_FORCE=1
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tjkirch_mod"
 
-source $ZSH/oh-my-zsh.sh
-
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
 
 # Enable plugins.
-plugins=(git brew ansible command-not-found history kubectl history-substring-search)
+plugins=(git brew ansible command-not-found history kubectl history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
+
+source $ZSH/oh-my-zsh.sh
 
 # Include alias file (if present) containing aliases for ssh, etc.
 if [ -f ~/.aliases ]
