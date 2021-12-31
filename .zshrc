@@ -48,9 +48,8 @@ else
     echo "Unknown architecture: ${arch_name}"
 fi
 
-if [ "${arch_name}" = "arm64" ]; then
-  source ${HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+# Syntax highlighting
+source ${HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Allow history search via up/down keys.
 source ${share_path}/zsh-history-substring-search/zsh-history-substring-search.zsh
