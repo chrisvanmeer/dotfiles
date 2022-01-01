@@ -55,8 +55,6 @@ source ${share_path}/zsh-history-substring-search/zsh-history-substring-search.z
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
-bindkey '\t' autosuggest-accept
-
 # Completions.
 autoload -Uz compinit && compinit
 # Case insensitive.
