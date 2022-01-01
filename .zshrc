@@ -34,7 +34,6 @@ then
   source ~/.zsh_aliases
 fi
 
-
 # Set architecture-specific brew share path.
 arch_name="$(uname -m)"
 kernel_name="$(uname -s)"
@@ -56,10 +55,14 @@ source ${share_path}/zsh-history-substring-search/zsh-history-substring-search.z
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
+bindkey '\t' autosuggest-accept
+
 # Completions.
 autoload -Uz compinit && compinit
 # Case insensitive.
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # Delete a given line number in the known_hosts file.
 rmknownh() {
