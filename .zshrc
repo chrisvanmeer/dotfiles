@@ -60,6 +60,9 @@ autoload -Uz compinit && compinit
 # Case insensitive.
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
+# No updates, we'll let Ansible handle this if neccesairy
+zstyle ':omz:update' mode disabled
+
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # Delete a given line number in the known_hosts file.
