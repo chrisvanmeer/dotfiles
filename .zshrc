@@ -39,10 +39,12 @@ arch_name="$(uname -m)"
 kernel_name="$(uname -s)"
 if [ "${kernel_name}" = "Linux" ]; then
     share_path="${ZSH_CUSTOM}/plugins"
+elif [ "${kernel_name}" = "Darwin" ]; then
+    share_path="/usr/local/share"
+    export PATH="/usr/local/opt/curl/bin:$PATH"
 elif [ "${arch_name}" = "x86_64" ]; then
     share_path="/usr/local/share"
 elif [ "${arch_name}" = "arm64" ]; then
-    export PATH="/usr/local/opt/curl/bin:$PATH"
     share_path="/opt/homebrew/share"
 else
     echo "Unknown architecture: ${arch_name}"
