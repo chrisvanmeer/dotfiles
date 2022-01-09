@@ -81,12 +81,23 @@ rmknownh() {
 
 # Stop a multipass instance, delete it and then purge the inventory
 mpdelete() {
-  re='^[0-9]+$'
   if [[ -z $1 ]] ; then
     echo "Error: No container name specified" >&2;
   else
     multipass stop $1
     multipass delete $1
     multipass purge
+  fi
+}
+
+mplaunch() {
+  if [ $# -eq 1 ]; then
+    multipass launch --name $1
+    multipass info $1
+  elif [ $# -eq 2 ]; then
+    multipass launch --name $1 --cloud-init $2
+    multipass info $1
+  elif [ $# -lt 1 ]; then
+    echo "Usage: mplaunch <name> <cloud init file>"
   fi
 }
