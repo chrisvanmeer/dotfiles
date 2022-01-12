@@ -11,6 +11,7 @@ export CLICOLOR_FORCE=1
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tjkirch_mod"
+DISABLE_AUTO_UPDATE=true
 
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
