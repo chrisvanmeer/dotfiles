@@ -4,6 +4,7 @@ alias a3="sudo apt dist-upgrade"
 alias a4="sudo apt autoremove"
 alias a5="sudo apt clean"
 alias mp="multipass"
+alias mpl="multipass list"
 alias gs='git status'
 alias gc='git commit'
 alias gp='git pull --rebase'
