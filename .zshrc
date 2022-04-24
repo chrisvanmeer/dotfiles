@@ -99,7 +99,10 @@ mplaunch() {
   elif [ $# -eq 2 ]; then
     multipass launch --name $1 --cloud-init $2
     multipass info $1
+  elif [ $# -eq 3 ]; then
+    multipass launch --name $1 --cloud-init $2 $3
+    multipass info $1
   elif [ $# -lt 1 ]; then
-    echo "Usage: mplaunch <name> <cloud init file>"
+    echo "Usage: mplaunch <name> <cloud init file> <image>"
   fi
 }
