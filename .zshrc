@@ -10,7 +10,7 @@ export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="tjkirch_mod"
+ZSH_THEME="eastwood"
 ZSH_DISABLE_COMPFIX=true
 DISABLE_AUTO_UPDATE=true
 
