@@ -18,7 +18,7 @@ DISABLE_AUTO_UPDATE=true
 unsetopt nomatch
 
 # Enable plugins.
-plugins=(git brew ansible command-not-found history kubectl sudo web-search copydir copyfile history-substring-search zsh-autosuggestions)
+plugins=(git brew ansible command-not-found history kubectl sudo web-search copyfile history-substring-search zsh-autosuggestions)
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
