@@ -116,7 +116,8 @@ mplaunch() {
   fi
 }
 
-function tab () {
+unalias t
+function t () {
   if [ "$(tmux list-windows | grep -c "$1")" -gt 0 ]; then
     windownumber=$(tmux list-windows | grep "$1" | cut -d ':' -f1)
     tmux select-window -t "$windownumber"
