@@ -115,3 +115,12 @@ mplaunch() {
     echo "Usage: mplaunch <name> <cloud init file> <image> <count>"
   fi
 }
+
+function tab () {
+  if [ "$(tmux list-windows | grep -c "$1")" -gt 0 ]; then
+    windownumber=$(tmux list-windows | grep "$1" | cut -d ':' -f1)
+    tmux select-window -t "$windownumber"
+  else
+    tmux new-window -n "$1" "ssh $1"
+  fi
+}
