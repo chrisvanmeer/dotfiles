@@ -13,3 +13,4 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias catssh='cat ~/.ssh/id_rsa.pub'
 alias tf-yolo='terraform apply -auto-approve'
 alias tf='terraform'
+alias tab='tabset'
