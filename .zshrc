@@ -116,7 +116,7 @@ mplaunch() {
   fi
 }
 
-[ -n "`alias | grep '^alias t='`" ] && unalias t
+unalias t >/dev/null 2>/dev/null
 function t () {
   if [ "$(tmux list-windows | grep -c "$1")" -gt 0 ]; then
     windownumber=$(tmux list-windows | grep "$1" | cut -d ':' -f1)
