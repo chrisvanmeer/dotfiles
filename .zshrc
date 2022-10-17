@@ -123,5 +123,6 @@ function t () {
     tmux select-window -t "$windownumber"
   else
     tmux new-window -n "$1" "ssh $1"
+    tmux select-pane -T "$1"
   fi
 }
