@@ -10,6 +10,7 @@ export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
 export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="lukerandall"
 ZSH_DISABLE_COMPFIX=true
 DISABLE_AUTO_UPDATE=true
 
