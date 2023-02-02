@@ -51,3 +51,13 @@ inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+
+" Highlight lines over 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+" Automatic line ending at 80 characters
+"set textwidth=80
+
+" Allow scrollling
+set mouse=a
