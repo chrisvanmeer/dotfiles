@@ -1,7 +1,6 @@
 syntax on               " enable syntax highlighting
 set cursorline          " highlight the current line
-" set background=dark   " darker color scheme
-" set ruler             " show line number in bar
+set cursorcolumn        " highlight the current position
 set nobackup            " don't create pointless backup files; Use VCS instead
 set autoread            " watch for file changes
 set number              " show line numbers
@@ -15,7 +14,6 @@ set scrolloff=5         " show at least 5 lines above/below
 filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
 filetype plugin on      " enable filetype-specific plugins
-colorscheme cobalt      " requires cobalt.vim to be in ~/.vim/colors
 
 " column-width visual indication
 let g:indentLine_char       = '⦙'
@@ -60,4 +58,4 @@ match OverLength /\%81v.\+/
 "set textwidth=80
 
 " Allow scrollling
-set mouse=a
+set showmatch           " show matching bracket
