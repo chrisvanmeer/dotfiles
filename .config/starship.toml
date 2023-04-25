@@ -119,6 +119,9 @@ truncation_length = 8
 truncation_symbol = '…/'
 style = 'cyan'
 
+[git_branch]
+style = 'purple'
+
 [line_break]
 disabled = true
 
