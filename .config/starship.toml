@@ -101,6 +101,7 @@ disabled = false
 
 [os.symbols]
 Macos = " "
+Ubuntu = "🐧 "
 
 [username]
 style_user = 'blue'
