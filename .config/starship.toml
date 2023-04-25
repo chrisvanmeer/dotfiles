@@ -90,18 +90,20 @@ palette = "atcomputing"
 
 [palettes.atcomputing]
 blue = "#3399cc"
-yellow = "#FFD814"
+vault = "#FFD814"
+consul = "#E03875"
+packer = "#63D0FF"
 
 [os]
 format = "[$symbol]($style)"
-style = "bold blue"
+style = "bold white"
 disabled = false
 
 [os.symbols]
 Macos = " "
 
 [username]
-style_user = 'white bold'
+style_user = 'blue bold'
 style_root = 'black bold'
 format = '[$user]($style) '
 disabled = false
@@ -109,13 +111,19 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = '[$ssh_symbol](bold yellow)on [$hostname](blue) '
+format = '[$ssh_symbol](bold vault)on [$hostname](packer) '
 disabled = false
 
 [directory]
 truncation_length = 8
 truncation_symbol = '…/'
 style = 'cyan'
+
+[line_break]
+disabled = true
+
+[git_status]
+style = 'consul'
 
 [aws]
 disabled = true
