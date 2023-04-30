@@ -14,5 +14,6 @@ alias catssh='cat ~/.ssh/id_rsa.pub'
 alias tf-yolo='terraform apply -auto-approve'
 alias tf='terraform'
 alias tab='tabset'
+alias vl='vault login -no-print -method=github token=$GITHUB_TOKEN'
 
 eval "$(starship init zsh)"
