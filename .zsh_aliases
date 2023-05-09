@@ -13,6 +13,10 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias catssh='cat ~/.ssh/id_rsa.pub'
 alias tf-yolo='terraform apply -auto-approve'
 alias tf='terraform'
+alias tfa='terraform apply'
+alias tfd='terraform destroy'
+alias tfo='terraform output'
+alias tfp='terraform plan'
 alias tab='tabset'
 alias vl='vault login -no-print -method=github token=$GITHUB_TOKEN'
 
