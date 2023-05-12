@@ -1,0 +1,17 @@
+---
+name: HashiCorp - Installer - Fedora
+command: |-
+  sudo dnf install -y dnf-plugins-core
+  sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+  sudo dnf -y install {{product}}
+tags:
+  - hashicorp
+  - fedora
+description: Installs a HashiCorp product on Fedora
+arguments:
+  - name: product
+    description: Name of the product to install
+    default_value: ~
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

@@ -1,0 +1,28 @@
+---
+name: Vault - Policy - Basic
+command: |-
+  vault policy write {{policy_name}} - << EOF
+  path "{{mount}}/{{secret}}" {
+    capabilities = [ {{capabilities}} ]
+  }
+  EOF
+tags:
+  - vault
+  - policy
+description: Creates a Vault policy for reading a secret on a mount
+arguments:
+  - name: policy_name
+    description: The name of the policy
+    default_value: pol-secret-read
+  - name: mount
+    description: The name of the secrets engine mount
+    default_value: kv
+  - name: secret
+    description: The name of the secret
+    default_value: secret
+  - name: capabilities
+    description: The name of the secret
+    default_value: '"create", "read", "update", "delete", "list", "sudo"'
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

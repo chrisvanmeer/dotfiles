@@ -1,0 +1,15 @@
+---
+name: MySQL - Create database and user
+command: |-
+  CREATE DATABASE {{name}};
+  GRANT ALL PRIVILEGES ON {{name}}.* to {{name}}@localhost IDENTIFIED WITH mysql_native_password BY '{{name}}';
+tags:
+  - mysql
+description: Create a MySQL database and a like-named user / password
+arguments:
+  - name: name
+    description: The name of the database, user and password
+    default_value: ~
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

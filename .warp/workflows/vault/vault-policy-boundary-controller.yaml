@@ -1,0 +1,39 @@
+---
+name: Vault - Policy - Boundary Controller
+command: |-
+  vault policy write {{policy_name}} - << EOF
+  path "auth/token/lookup-self" {
+    capabilities = ["read"]
+  }
+
+  path "auth/token/renew-self" {
+    capabilities = ["update"]
+  }
+
+  path "auth/token/revoke-self" {
+    capabilities = ["update"]
+  }
+
+  path "sys/leases/renew" {
+    capabilities = ["update"]
+  }
+
+  path "sys/leases/revoke" {
+    capabilities = ["update"]
+  }
+
+  path "sys/capabilities-self" {
+    capabilities = ["update"]
+  }
+  EOF
+tags:
+  - vault
+  - boundary
+description: Creates a Vault policy for a Boundary Controller
+arguments:
+  - name: policy_name
+    description: The name of the policy
+    default_value: pol-boundary-controller
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

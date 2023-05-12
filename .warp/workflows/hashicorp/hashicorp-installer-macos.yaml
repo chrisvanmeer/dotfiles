@@ -1,0 +1,16 @@
+---
+name: HashiCorp - Installer - MacOS
+command: |-
+  brew tap hashicorp/tap
+  brew install hashicorp/tap/{{product}}
+tags:
+  - hashicorp
+  - macos
+description: Installs a HashiCorp product on MacOS
+arguments:
+  - name: product
+    description: Name of the product to install
+    default_value: ~
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

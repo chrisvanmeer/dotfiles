@@ -1,0 +1,17 @@
+---
+name: HashiCorp - Installer - Amazon Linux
+command: |-
+  sudo yum install -y yum-utils shadow-utils
+  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+  sudo yum -y install {{product}}
+tags:
+  - hashicorp
+  - amazon linux
+description: Installs a HashiCorp product on Amazon Linux
+arguments:
+  - name: product
+    description: Name of the product to install
+    default_value: ~
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

@@ -1,0 +1,31 @@
+---
+name: Vault - OSS - Basic Configuration - Raft
+command: |-
+  sudo tee /etc/vault.d/vault.hcl > /dev/null << EOF
+  ui           = true
+  api_addr     = "http://{{ip_address}}:8200"
+  cluster_addr = "http://{{ip_address}}:8201"
+
+  storage "raft" {
+    node_id = "{{node_name}}"
+    path    = "/opt/vault/data"
+  }
+
+  listener "tcp" {
+    address     = "0.0.0.0:8200"
+    tls_disable = 1
+  }
+  EOF
+tags:
+  - vault
+description: Creates a basic OSS Vault configuration with a raft storage backend
+arguments:
+  - name: ip_address
+    description: The IP address of the node
+    default_value: 1.2.3.4
+  - name: node_name
+    description: The unique name of the Vault node in the cluster
+    default_value: vault01
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

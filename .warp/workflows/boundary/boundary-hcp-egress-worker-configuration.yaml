@@ -1,0 +1,29 @@
+---
+name: Boundary - HCP - Egress - Worker Configuration
+command: |-
+  sudo tee /etc/boundary.d/egress-worker.hcl > /dev/null << EOF
+  disable_mlock = true
+
+  listener "tcp" {
+    address = "0.0.0.0:9203"
+    purpose = "proxy"
+  }
+
+  worker {
+    initial_upstreams = ["{{upstream}}:9202"]
+    auth_storage_path = "/opt/boundary/egress-worker"
+    tags {
+      type = ["egress"]
+    }
+  }
+  EOF
+tags:
+  - boundary
+description: Creates the configuration for the egress worker
+arguments:
+  - name: upstream
+    description: The external IP address of the ingress worker to connect to
+    default_value: 11.22.33.44
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
