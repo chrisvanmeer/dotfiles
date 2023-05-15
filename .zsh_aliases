@@ -21,6 +21,9 @@ alias tfp='terraform plan'
 alias tfs='terraform show'
 alias tfy='terraform apply -auto-approve'
 alias tab='tabset'
-alias vl='vault login -no-print -method=github token=$GITHUB_TOKEN'
+alias vlg='vault login -no-print -method=github token=$GITHUB_TOKEN'
+alias vpw='vault policy write'
+alias vs='vault status'
+alias vtl='vault token lookup'
 
 eval "$(starship init zsh)"
