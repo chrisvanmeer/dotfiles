@@ -1,0 +1,19 @@
+---
+name: Azure - Login with Service Principal
+command: az login --service-principal -u {{client_id}} -p {{client_secret}} --tenant {{tenant_id}}
+tags:
+  - azure
+description: Use a Service Principal to log into Azure
+arguments:
+  - name: client_id
+    description: Service Principal ID (Client ID)
+    default_value: 00000000-0000-0000-0000-000000000000 
+  - name: client_secret
+    description: Password (Client Secret)
+    default_value: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+  - name: tenant_id
+    description: Tenant ID
+    default_value: 00000000-0000-0000-0000-000000000000 
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
