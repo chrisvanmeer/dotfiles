@@ -1,0 +1,17 @@
+---
+name: Vault - Token - Create - Orphan
+command: |-
+  vault token create \
+    -no-default-policy=true
+    -orphan=true
+    -policy={{policy_name}}
+tags:
+  - vault
+description: Create an orphan token with a policy
+arguments:
+  - name: policy_name
+    description: The name of Vault policy
+    default_value: ~
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

@@ -7,13 +7,13 @@ description: Use a Service Principal to log into Azure
 arguments:
   - name: client_id
     description: Service Principal ID (Client ID)
-    default_value: 00000000-0000-0000-0000-000000000000 
+    default_value: 00000000-0000-0000-0000-000000000000
   - name: client_secret
     description: Password (Client Secret)
-    default_value: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+    default_value: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   - name: tenant_id
     description: Tenant ID
-    default_value: 00000000-0000-0000-0000-000000000000 
+    default_value: 00000000-0000-0000-0000-000000000000
 author: Chris van Meer
 author_url: https://chrisvanmeer.nl
 shells: []
