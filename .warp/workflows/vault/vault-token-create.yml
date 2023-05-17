@@ -1,0 +1,27 @@
+---
+name: Vault - Token - Create
+command: |-
+  vault token create \
+    -no-default-policy={{no_default_policy}}
+    -orphan={{orphan}}
+    -renewable={{renewable}}
+    -policy={{policy_name}}
+tags:
+  - vault
+description: Create a token with a policy
+arguments:
+  - name: no_default_policy
+    description: Do not include the default policy
+    default_value: true
+  - name: orphan
+    description: Create an orphan token?
+    default_value: true
+  - name: renewable
+    description: Create a renewable token?
+    default_value: true
+  - name: policy_name
+    description: The name of Vault policy
+    default_value: ~
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
