@@ -1,0 +1,21 @@
+---
+name: Vault - Auth - Enable userpass and create a user
+command: |-
+  vault auth enable userpass
+  vault write auth/userpass/users/{{username}} password={{password}} policies={{policies}}
+tags:
+  - vault
+arguments:
+  - name: username
+    description: The name of the user
+    default_value: chris
+  - name: password
+    description: The password
+    default_value: vault
+  - name: policies
+    description: The policies attached to this user
+    default_value: pol-admin
+description: Enable the userpass auth method and create a user
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
