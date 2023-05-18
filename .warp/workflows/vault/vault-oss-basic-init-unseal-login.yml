@@ -1,0 +1,16 @@
+---
+name: Vault - OSS - Basic Init, Unseal & Login
+command: |-
+  vault -autocomplete-install
+  echo "export VAULT_ADDR=http://127.0.0.1:8200" >> ~/.bashrc
+  source ~/.bashrc
+  vault operator init -key-shares=1 -key-threshold=1 | tee vault.creds >/dev/null
+  vault operator unseal $(awk '/Unseal/ {print $NF}' vault.creds) >/dev/null
+  sleep 5
+  vault login $(awk '/Root/ {print $NF}' vault.creds) >/dev/null
+tags:
+  - vault
+description: Initialize, unseal and login to Vault
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
