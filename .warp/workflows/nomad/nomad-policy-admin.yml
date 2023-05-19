@@ -1,0 +1,43 @@
+---
+name: Nomad - Policy - Admin Policy
+command: |-
+  nomad acl policy apply {{policy_name}} - << EOF
+  namespace "*" {
+    policy       = "write"
+    capabilities = ["alloc-node-exec"]
+  }
+  
+  agent {
+    policy = "write"
+  }
+  
+  operator {
+    policy = "write"
+  }
+  
+  quota {
+    policy = "write"
+  }
+  
+  node {
+    policy = "write"
+  }
+  
+  host_volume "*" {
+    policy = "write"
+  }
+  
+  plugin {
+    policy = "read"
+  }
+  EOF
+tags:
+  - nomad
+arguments:
+  - name: policy_name
+    description: The name of the admin policy
+    default_value: pol-admin
+description: Create an admin policy
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
