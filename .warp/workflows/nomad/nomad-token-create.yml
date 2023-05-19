@@ -1,0 +1,19 @@
+---
+name: Nomad - Token - Create
+command: nomad acl token create -name={{token_name}} -policy={{policy_name}} -type={{token_type}}
+tags:
+  - nomad
+arguments:
+  - name: token_name
+    description: Sets the human readable name for the ACL token.
+    default_value: token-admin
+  - name: policy_name
+    description: Specifies a policy to associate with the token. Can be specified multiple times, but only with client type tokens.
+    default_value: pol-admin
+  - name: token_type
+    description: Sets the type of token. Must be one of "client" (default), or "management".
+    default_value: client
+description: Create a Nomad ACL token
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
