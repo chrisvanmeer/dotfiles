@@ -1,0 +1,42 @@
+---
+name: Consul - Policy - Admin
+command: |-
+  consul acl policy create -name "{{policy_name}}" -rules - << EOF
+  nomad acl policy apply  - << EOF
+  acl = "write"
+  agent_prefix "" {
+    policy = "write"
+  }
+  event_prefix "" {
+    policy = "write"
+  }
+  key_prefix "" {
+    policy = "write"
+  }
+  keyring = "write"
+  node_prefix "" {
+    policy = "write"
+  }
+  operator = "write"
+  mesh = "write"
+  query_prefix "" {
+    policy = "write"
+  }
+  service_prefix "" {
+    policy = "write"
+    intentions = "write"
+  }
+  session_prefix "" {
+    policy = "write"
+  }
+  EOF
+tags:
+  - consul
+arguments:
+  - name: policy_name
+    description: The name of the policy
+    default_value: pol-admin
+description: Create an admin policy
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
