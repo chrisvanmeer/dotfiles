@@ -10,7 +10,7 @@ tags:
   - vault
 arguments:
   - name: policy_name
-    description: The name of the admin policy
+    description: The name of the policy
     default_value: pol-admin
 description: Create an admin policy
 author: Chris van Meer
