@@ -2,7 +2,7 @@
 name: Nomad - Policy - Developer
 command: |-
   nomad acl policy apply {{policy_name}} - << EOF
-  namespace "default" {
+  namespace "{{namespace}}" {
     policy = "read"
     capabilities = ["submit-job","dispatch-job","read-logs"]
   }
@@ -13,6 +13,9 @@ arguments:
   - name: policy_name
     description: The name of the policy
     default_value: pol-developer
+  - name: namespace
+    description: The namespace
+    default_value: default
 description: Create a developer policy
 author: Chris van Meer
 author_url: https://chrisvanmeer.nl

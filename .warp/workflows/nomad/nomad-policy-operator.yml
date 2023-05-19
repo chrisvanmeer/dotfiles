@@ -2,22 +2,22 @@
 name: Nomad - Policy - Operator
 command: |-
   nomad acl policy apply {{policy_name}} - << EOF
-  namespace "default" {
+  namespace "{{namespace}}" {
     policy = "read"
   }
-  
+
   node {
     policy = "write"
   }
-  
+
   agent {
     policy = "write"
   }
-  
+
   operator {
     policy = "write"
   }
-  
+
   plugin {
     policy = "list"
   }
@@ -28,6 +28,9 @@ arguments:
   - name: policy_name
     description: The name of the policy
     default_value: pol-operator
+  - name: namespace
+    description: The namespace
+    default_value: default
 description: Create an operator policy
 author: Chris van Meer
 author_url: https://chrisvanmeer.nl
