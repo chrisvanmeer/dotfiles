@@ -1,10 +1,13 @@
 ---
-name: Nomad - Policy - Admin
+name: Nomad - Policy - Operator
 command: |-
   nomad acl policy apply {{policy_name}} - << EOF
-  namespace "*" {
-    policy       = "write"
-    capabilities = ["alloc-node-exec"]
+  namespace "default" {
+    policy = "read"
+  }
+  
+  node {
+    policy = "write"
   }
   
   agent {
@@ -15,20 +18,8 @@ command: |-
     policy = "write"
   }
   
-  quota {
-    policy = "write"
-  }
-  
-  node {
-    policy = "write"
-  }
-  
-  host_volume "*" {
-    policy = "write"
-  }
-  
   plugin {
-    policy = "write"
+    policy = "list"
   }
   EOF
 tags:
@@ -36,8 +27,8 @@ tags:
 arguments:
   - name: policy_name
     description: The name of the policy
-    default_value: pol-admin
-description: Create an admin policy
+    default_value: pol-operator
+description: Create an operator policy
 author: Chris van Meer
 author_url: https://chrisvanmeer.nl
 shells: []

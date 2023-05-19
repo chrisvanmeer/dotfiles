@@ -1,0 +1,19 @@
+---
+name: Nomad - Policy - Developer
+command: |-
+  nomad acl policy apply {{policy_name}} - << EOF
+  namespace "default" {
+    policy = "read"
+    capabilities = ["submit-job","dispatch-job","read-logs"]
+  }
+  EOF
+tags:
+  - nomad
+arguments:
+  - name: policy_name
+    description: The name of the policy
+    default_value: pol-developer
+description: Create a developer policy
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
