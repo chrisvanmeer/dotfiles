@@ -1,0 +1,53 @@
+---
+name: Vault - OSS - HA Configuration - Raft
+command: |-
+  sudo tee /etc/vault.d/vault.hcl > /dev/null << EOF
+  ui           = true
+  api_addr     = "http://{{ip_address}}:8200"
+  cluster_addr = "http://{{ip_address}}:8201"
+
+  storage "raft" {
+    node_id = "{{node_name}}"
+    path    = "/opt/vault/data"
+
+    retry_join {
+      leader_api_addr = "http://{{node1_ip}}:8200"
+    }
+
+    retry_join {
+      leader_api_addr = "http://{{node2_ip}}:8200"
+    }
+
+    retry_join {
+      leader_api_addr = "http://{{node3_ip}}:8200"
+    }
+
+  }
+
+  listener "tcp" {
+    address     = "0.0.0.0:8200"
+    tls_disable = 1
+  }
+  EOF
+tags:
+  - vault
+description: Creates a HA OSS Vault configuration with a raft storage backend
+arguments:
+  - name: ip_address
+    description: The IP address of the node itself
+    default_value: 192.168.65.11
+  - name: node_name
+    description: The unique name of the Vault node in the cluster
+    default_value: vault01
+  - name: node1_ip
+    description: The IP address of other node(s)
+    default_value: 192.168.65.11
+  - name: node2_ip
+    description: The IP address of other node(s)
+    default_value: 192.168.65.12
+  - name: node3_ip
+    description: The IP address of other node(s)
+    default_value: 192.168.65.13
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

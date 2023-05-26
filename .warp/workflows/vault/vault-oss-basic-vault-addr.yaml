@@ -1,0 +1,16 @@
+---
+name: Vault - OSS - Set Vault Address
+command: |-
+  vault -autocomplete-install
+  echo "export VAULT_ADDR={{vault_addr}}" >> ~/.bashrc
+  source ~/.bashrc
+tags:
+  - vault
+arguments:
+  - name: vault_addr
+    description: The full address of the Vault server
+    default_value: http://127.0.0.1:8200
+description: Set the Vault address
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
