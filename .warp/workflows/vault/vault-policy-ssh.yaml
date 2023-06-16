@@ -1,0 +1,32 @@
+---
+name: Vault - Policy - SSH
+command: |-
+  vault policy write {{policy_name}} -<<EOF
+  path "{{mount}}/issue/{{role}}" {
+    capabilities = [ {{capabilities}} ]
+  }
+
+  path "{{mount}}/sign/{{role}}" {
+    capabilities = [ {{capabilities}} ]
+  }
+  EOF
+tags:
+  - vault
+  - policy
+description: Creates a Vault policy for the SSH secrets engine
+arguments:
+  - name: policy_name
+    description: The name of the policy
+    default_value: pol-boundary-ssh
+  - name: mount
+    description: The name of the secrets engine mount
+    default_value: ssh
+  - name: role
+    description: The name of the role
+    default_value: boundary-client
+  - name: capabilities
+    description: The name of the secret
+    default_value: '"create", "update"'
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []

@@ -2,9 +2,9 @@
 name: Vault - Token - Create
 command: |-
   vault token create \
-    -no-default-policy={{no_default_policy}}
-    -orphan={{orphan}}
-    -renewable={{renewable}}
+    -no-default-policy={{no_default_policy}} \
+    -orphan={{orphan}} \
+    -renewable={{renewable}} \
     -policy={{policy_name}}
 tags:
   - vault

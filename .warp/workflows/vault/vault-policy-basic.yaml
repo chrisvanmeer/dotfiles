@@ -19,7 +19,7 @@ arguments:
     default_value: kv
   - name: secret
     description: The name of the secret
-    default_value: secret
+    default_value: data/secret
   - name: capabilities
     description: The name of the secret
     default_value: '"create", "read", "update", "delete", "list", "sudo"'

@@ -1,0 +1,21 @@
+---
+name: Boundary - Vault - SSH - CA Config - Server
+command: |-
+  sudo -i
+  cat '{{public_key}}' /etc/ssh/{{vault-ca.pub}}
+  chown 1000:1000 /etc/ssh/{{vault-ca.pub}}
+  chmod 644 /etc/ssh/{{vault-ca.pub}}
+  echo TrustedUserCAKeys /etc/ssh/{{vault-ca.pub}} >> /etc/ssh/sshd_config
+  systemctl restart ssh
+tags:
+  - boundary
+description: Modify the SSH configuration for Trusted CA Keys
+arguments:
+  - name: public_key
+    description: The public key of the CA
+  - name: file_name
+    description: The name of the file
+    default_value: vault-ca.pub
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
