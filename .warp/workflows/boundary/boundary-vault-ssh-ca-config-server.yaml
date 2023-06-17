@@ -1,12 +1,10 @@
 ---
 name: Boundary - Vault - SSH - CA Config - Server
 command: |-
-  sudo -i
-  cat '{{public_key}}' /etc/ssh/{{vault-ca.pub}}
-  chown 1000:1000 /etc/ssh/{{vault-ca.pub}}
-  chmod 644 /etc/ssh/{{vault-ca.pub}}
-  echo TrustedUserCAKeys /etc/ssh/{{vault-ca.pub}} >> /etc/ssh/sshd_config
-  systemctl restart ssh
+  echo '{{public_key}}' | sudo tee /etc/ssh/{{vault-ca.pub}} > /dev/null
+  sudo chmod 644 /etc/ssh/{{vault-ca.pub}}
+  echo 'TrustedUserCAKeys /etc/ssh/{{vault-ca.pub}}' | sudo tee -a /etc/ssh/sshd_config > /dev/null
+  sudo systemctl restart ssh
 tags:
   - boundary
 description: Modify the SSH configuration for Trusted CA Keys
