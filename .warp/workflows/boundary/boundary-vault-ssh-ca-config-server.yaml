@@ -1,9 +1,9 @@
 ---
 name: Boundary - Vault - SSH - CA Config - Server
 command: |-
-  echo '{{public_key}}' | sudo tee /etc/ssh/{{vault-ca.pub}} > /dev/null
-  sudo chmod 644 /etc/ssh/{{vault-ca.pub}}
-  echo 'TrustedUserCAKeys /etc/ssh/{{vault-ca.pub}}' | sudo tee -a /etc/ssh/sshd_config > /dev/null
+  echo '{{public_key}}' | sudo tee /etc/ssh/{{file_name}} > /dev/null
+  sudo chmod 644 /etc/ssh/{{file_name}}
+  echo 'TrustedUserCAKeys /etc/ssh/{{file_name}}' | sudo tee -a /etc/ssh/sshd_config > /dev/null
   sudo systemctl restart ssh
 tags:
   - boundary
