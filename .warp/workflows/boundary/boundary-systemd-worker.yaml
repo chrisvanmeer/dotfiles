@@ -11,7 +11,7 @@ command: |-
   User=boundary
   Group=boundary
   Type=simple
-  ExecStart=/usr/bin/boundary-worker server -config="/etc/boundary.d/{{config}}-worker.hcl"
+  ExecStart=/usr/bin/boundary server -config="/etc/boundary.d/{{config}}-worker.hcl"
 
   [Install]
   WantedBy=multi-user.target
