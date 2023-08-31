@@ -13,6 +13,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="lukerandall"
 ZSH_DISABLE_COMPFIX=true
 DISABLE_AUTO_UPDATE=true
+PROMPT_EOL_MARK=''
 
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
