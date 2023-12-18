@@ -1,0 +1,19 @@
+---
+name: Ansible - Configuration - Defaults
+command: |-
+  tee ansible.cfg > /dev/null << EOF
+  [defaults]
+  callbacks_enabled = profile_tasks, timer
+  collections_path  = ./collections
+  host_key_checking = false
+  inventory         = inventory
+  roles_path        = ./roles
+  stdout_callback   = yaml
+  EOF
+tags:
+  - ansible
+  - configuration
+description: Create an ansible.cfg file in the current directory
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
