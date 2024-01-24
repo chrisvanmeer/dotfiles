@@ -1,0 +1,18 @@
+---
+name: CvM | OpenSSL inspect website certificate
+command: |-
+  echo "Q" | openssl s_client -connect {{fqdn}}:{{port}} 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName
+tags:
+  - tls
+  - openssl
+description: OpenSSL inspect website certificate
+arguments:
+  - name: fqdn
+    description: The website
+    default_value: google.nl
+  - name: port
+    description: The port
+    default_value: 443
+author: Chris van Meer
+author_url: https://chrisvanmeer.nl
+shells: []
