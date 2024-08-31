@@ -127,3 +127,20 @@ function t () {
     tmux select-pane -T "$1"
   fi
 }
+
+sshlab() {
+  if [ -z "$1" ]; then
+    echo "Usage: $0 <guacamole_ssh_host>"
+    return 1
+  fi
+
+  if [[ "$1" == *"vault"* ]]; then
+    ip="10.0.0.10"
+  #elif [[ "$1" == *"terra"* ]]; then
+  #  ip="10.0.250.10"
+  else
+    ip="10.0.250.10"
+  fi
+
+  ssh "$1" sudo "ssh guru00@$ip -i /root/id_rsa_guru00"
+}
